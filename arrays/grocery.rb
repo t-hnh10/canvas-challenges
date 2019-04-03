@@ -9,7 +9,7 @@ optionSelected = gets.chomp.downcase
         puts "Great! What would you like to add to your groceries list?"
         grocery_item = gets.chomp.capitalize!
         grocery_list << grocery_item
-        puts "You have added #{grocery_item} in your list!"
+        puts "You have added #{grocery_item} items in your list!"
         loop do
             while grocery_list.length < 3
                 puts "Please enter another item"
