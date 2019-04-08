@@ -7,26 +7,27 @@ puts welcome
 optionSelected = gets.chomp.downcase
     if optionSelected == "yes"
         puts "Great! What would you like to add to your groceries list?"
-        grocery_item = gets.chomp.capitalize!
+        grocery_item = gets.chomp.downcase
         grocery_list << grocery_item
-        puts "You have added #{grocery_item} items in your list!"
+        puts "You have added #{grocery_item} to your list!"
         loop do
             while grocery_list.length < 3
                 puts "Please enter another item"
-                grocery_item = gets.chomp.capitalize!   
+                grocery_item = gets.chomp.downcase
                 grocery_list << grocery_item
-                puts "You have added #{grocery_item} in your list!"
+                puts "You have added #{grocery_item} to your list!"
             end
         puts "Your grocery basket is heavy! Would you like to add more?"
         optionSelected = gets.chomp.downcase
             if optionSelected == "yes"
                 puts "What would you like to add?"
-                    grocery_item = gets.chomp.capitalize!
+                    grocery_item = gets.chomp.downcase
                     grocery_list << grocery_item
-                    puts "You have added #{grocery_item} in your list!"
+                    puts "You have added #{grocery_item} to your list!"
             else
-                for grocery_item in grocery_list
-                    print "You have #{grocery_item} in your list."
+                puts "Your shopping list:"
+                grocery_list.sort.each do |items|  
+                puts items
                 end
                 abort
             end
