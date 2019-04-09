@@ -1,12 +1,16 @@
 # Beast Mode: Lunch Order Splitting
 
+require 'yaml'
 # Initialisation
 amount_owed = []
 
 # Hash
-items = [{ customer: "John", item: "Soup", cost: 8.50},
-{customer: "Sarah", item: "Pasta", cost: 12},
-{customer: "John", item: "Coke", cost: 2.50}]
+#items = [{ customer: "John", item: "Soup", cost: 8.50},
+#{customer: "Sarah", item: "Pasta", cost: 12},
+#{customer: "John", item: "Coke", cost: 2.50}]
+# File.write('items.yml', items.to_yaml)
+
+items = YAML.load_file('items.yml')
 
 puts "Welcome! Please enter a customer's name."
 customer_name = gets.chomp.capitalize
